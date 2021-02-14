@@ -1,0 +1,43 @@
+# This is an example PKGBUILD file. Use this as a start to creating your own,
+# and remove these comments. For more information, see 'man PKGBUILD'.
+# NOTE: Please fill out the license field for your package! If it is unknown,
+# then please put 'unknown'.
+
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=apple-t2-audio-config-1614
+pkgver=0.1
+pkgrel=1
+pkgdesc="System configuration files for the T2 audio driver, for the 16,1 or 16,4 MacBookPros"
+arch=('any')
+url="https://github.com/Redecorating/t2-audio-config-files"
+license=('unknown')
+depends=(
+  alsa-card-profiles
+  linux-mbp
+)
+makedepends=()
+checkdepends=()
+optdepends=(
+  apple-bce-dkms-git
+  apple-bce-git
+  pulseaudio
+  pipewire
+)
+conflicts=(
+  apple-t2-audio-config
+)
+source=(
+  91-apple-t2-audio.rules
+  apple-t2.conf
+  AppleT2.conf
+)
+
+sha256sums=('d38c15e53a7a5eb94dc4075af2e59c45186a791e23758f25ebdb4ac1c188b138'
+            'd08583053a8500aec29c5389437029d8d50c3721893c2013fc2c13e2bc525cde'
+            '9676cf36b03565569acf1a451855cc5b8e8da04e7e8f1a85893da9335a0b8937')
+
+package() {
+	install -Dm644 ./AppleT2.conf $pkgdir/usr/share/alsa/cards/AppleT2.conf
+	install -Dm644 ./91-apple-t2-audio.rules $pkgdir/usr/lib/udev/rules.d/91-apple-t2-audio.rules
+	install -Dm644 ./apple-t2.conf $pkgdir/usr/share/alsa-card-profile/mixer/profile-sets/apple-t2.conf
+}
