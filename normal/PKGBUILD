@@ -6,13 +6,12 @@
 # Maintainer: Your Name <youremail@domain.com>
 pkgname=apple-t2-audio-config
 pkgver=0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="System configuration files for the T2 audio driver"
 arch=('any')
 url="https://github.com/Redecorating/t2-audio-config-files"
 license=('unknown')
 depends=(
-  alsa-card-profiles
   linux-mbp
 )
 makedepends=()
@@ -40,4 +39,5 @@ package() {
 	install -Dm644 ./AppleT2.conf $pkgdir/usr/share/alsa/cards/AppleT2.conf
 	install -Dm644 ./91-apple-t2-audio.rules $pkgdir/usr/lib/udev/rules.d/91-apple-t2-audio.rules
 	install -Dm644 ./apple-t2.conf $pkgdir/usr/share/alsa-card-profile/mixer/profile-sets/apple-t2.conf
+	install -Dm644 ./apple-t2.conf $pkgdir/usr/share/pulseaudio/alsa-mixer/profile-sets/apple-t2.conf
 }
