@@ -8,7 +8,7 @@ It should also work if `alsa-card-profiles` is split from `pulseaudio`, which is
 
 It should work, but I haven't tested it because I don't have a clean system to test it on, nor time to make one.
 
-I've also made it so you can select just Headphones or just Speakers, as for some people (including me) when programs use the Microphone, things crash. Another change I've made is making pipwire work as well as pulseaudio.
+I've also made it so you can select just Headphones or just Speakers, as for some people (including me) when programs use the Microphone, things crash. Another change I've made is making pipewire work as well as pulseaudio.
 
 Goodnight.
 
