@@ -1,3 +1,5 @@
+Moved to [here](https://github.com/Redecorating/archinstall-mbp/tree/main/apple-t2-audio-config)
+
 # t2-audio-config-files
 
 If you are on Arch or an Arch based distro, you can get packages for this from the releases page.
